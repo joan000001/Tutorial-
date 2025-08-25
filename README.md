@@ -29,7 +29,7 @@ Una vez instalado VSCode, se procedió a instalar la extensión Lushay Code. Est
 
 Además, se incorporó la extensión Verilog-HDL/SystemVerilog, que proporciona funcionalidades de resaltado de sintaxis, autocompletado y validación para dichos lenguajes.
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/10.PNG )
 
 ### 4. Instalación de OSS-Cad-Suite
 
@@ -60,110 +60,75 @@ Se descargó e instaló GNU-Make desde el sitio de GnuWin32. Para permitir el us
 
 ## 2. Uso de la cadena de herramientas para diseño en FPGA
 
+### 1. Archivo 
 
-
-Uso del entorno de desarrollo de código abierto para FPGA Tang Nano 9K
-
-Este proyecto documenta la experiencia de uso del entorno de herramientas open source aplicado al diseño digital en la FPGA Tang Nano 9K, siguiendo el tutorial oficial y comprobando el funcionamiento de cada etapa del flujo de diseño.
-
-📂 Estructura del proyecto
-
-Se utilizó la jerarquía de carpetas recomendada:
-
-design/ → Archivos RTL del diseño (.sv, .v)
-
-sim/ → Archivos de simulación (testbench)
-
-constr/ → Restricciones físicas (.cst)
-
-build/ → Contiene el Makefile con las recetas
-
-El repositorio fue clonado con:
+Mediante el uso de la herramienta git se procedió a crear un clon del archivo correspondiente para utilizar en este tutorial
 
 git clone https://github.com/DJosueMM/open_source_fpga_environment.git
 
-⚙️ Inicialización del entorno
+![image Alt](  )
+
+
+
+### 2. Inicialización del entorno
 
 Se abrió el proyecto en Visual Studio Code (VSC) y se usó la extensión FPGA Toolchain para abrir una terminal OSS-CAD-Suite.
 La instalación fue verificada con:
 
 yosys
 
+![image Alt](  )
 
-La herramienta de síntesis respondió correctamente, confirmando que el entorno estaba listo para usarse.
+### 3. Simulación del diseño
 
-🧪 Simulación del diseño
-
-Con el ejemplo BlinkyLed:
-
-cd ./ejemplos/BlinkyLed/src/build/
-make test
+Se procedió a ejecutar la ruta mediante la terminal para poder acceder a la carpeta build donde se ejecuta el programa.
 
 
-Se generó un archivo .vcd con las señales simuladas.
+Una vez accedido a la carpeta se ejecuta una prueba del programa.
 
-Luego, con:
-
-make wv
+![image Alt](  )
 
 
-se abrió GTKwave para visualizar los diagramas de tiempo.
-Las señales fueron cargadas y mostraron el comportamiento esperado.
+Al terminar la ejecución de la prueba se procede a ejecutar una simulación de las señales con el fin de crear un gráfico de estas a través del tiempo.SE abrió GTKwave para visualizar los diagramas de tiempo.
 
-🛠️ Síntesis e implementación
+![image Alt](  )
+ 
+ 
+### 4. Síntesis e implementación
 
 Se ejecutaron las etapas de diseño desde RTL hasta hardware:
 
 Síntesis:
 
-make synth
+![image Alt](  )
 
 
 → Generó un .json y log de síntesis.
 
 Place & Route:
 
-make pnr
+![image Alt](  )
 
 
 → Implementación física correcta.
 
 Bitstream:
 
-make bitstream
+![image Alt](  )
 
 
 → Generó archivo .fs con el diseño.
 
 Carga en la FPGA:
 
-make load
+![image Alt](  )
 
 
 → El diseño fue cargado exitosamente en la Tang Nano 9K.
 
 También se validó el comando global:
 
-make all
+![image Alt](  )
 
 
-→ Ejecutó todas las etapas automáticamente.
-
-📝 Configuración del Makefile
-
-Se revisaron y comprendieron las variables principales:
-
-FUENTES → Archivos de diseño RTL
-
-TESTBENCH → Archivos de simulación
-
-CONSTRAINTS → Archivo .cst de pines
-
-TOP_DESIGN → Módulo superior
-
-TOP_TB → Módulo del testbench
-
-VCD_FILE → Nombre del archivo de simulación .vcd
-
-Estas son las únicas que deben modificarse para proyectos nuevos.
-Las recetas (synth, pnr, bitstream, load, etc.) funcionaron sin cambios.
+Mediante esta tutorial se comprueba que el funcionamiento tanto de la fpga como de los programas instalados funcionan adecuadamente.
