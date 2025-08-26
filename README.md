@@ -66,7 +66,7 @@ Mediante el uso de la herramienta git se procedió a crear un clon del archivo c
 
 git clone https://github.com/DJosueMM/open_source_fpga_environment.git
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/8.PNG )
 
 
 
@@ -77,7 +77,7 @@ La instalación fue verificada con:
 
 yosys
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/9.PNG )
 
 ### 3. Simulación del diseño
 
@@ -86,12 +86,12 @@ Se procedió a ejecutar la ruta mediante la terminal para poder acceder a la car
 
 Una vez accedido a la carpeta se ejecuta una prueba del programa.
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/11.PNG )
 
 
-Al terminar la ejecución de la prueba se procede a ejecutar una simulación de las señales con el fin de crear un gráfico de estas a través del tiempo.SE abrió GTKwave para visualizar los diagramas de tiempo.
+Al terminar la ejecución de la prueba se procede a ejecutar una simulación de las señales con el fin de crear un gráfico de estas.Se abrió GTKwave para visualizar los diagramas de tiempo.
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/12.PNG )
  
  
 ### 4. Síntesis e implementación
@@ -100,21 +100,21 @@ Se ejecutaron las etapas de diseño desde RTL hasta hardware:
 
 Síntesis:
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/13.PNG )
 
 
 → Generó un .json y log de síntesis.
 
 Place & Route:
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/14.PNG )
 
 
 → Implementación física correcta.
 
 Bitstream:
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/15.PNG )
 
 
 → Generó archivo .fs con el diseño.
@@ -128,7 +128,7 @@ Carga en la FPGA:
 
 También se validó el comando global:
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/16.PNG )
 
 
 Mediante esta tutorial se comprueba que el funcionamiento tanto de la fpga como de los programas instalados funcionan adecuadamente.
