@@ -128,4 +128,5 @@ También se validó el comando global:
 
 
 
-Mediante esta tutorial se comprueba que el funcionamiento tanto de la fpga como de los programas instalados funcionan adecuadamente.
+### Mediante esta tutorial se comprueba que el funcionamiento tanto de la fpga como de los programas instalados funcionan adecuadamente.
+
