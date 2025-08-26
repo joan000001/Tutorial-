@@ -103,21 +103,17 @@ Síntesis:
 ![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/13.PNG )
 
 
-→ Generó un .json y log de síntesis.
 
 Place & Route:
 
 ![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/14.PNG )
 
 
-→ Implementación física correcta.
 
 Bitstream:
 
 ![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/15.PNG )
 
-
-→ Generó archivo .fs con el diseño.
 
 Carga en la FPGA:
 
@@ -129,6 +125,7 @@ Carga en la FPGA:
 También se validó el comando global:
 
 ![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/16.PNG )
+
 
 
 Mediante esta tutorial se comprueba que el funcionamiento tanto de la fpga como de los programas instalados funcionan adecuadamente.
