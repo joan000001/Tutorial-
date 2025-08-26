@@ -121,7 +121,7 @@ Bitstream:
 
 Carga en la FPGA:
 
-![image Alt](  )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/video.gif )
 
 
 → El diseño fue cargado exitosamente en la Tang Nano 9K.
