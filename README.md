@@ -228,7 +228,7 @@ endmodule
 
 Una vez creado el Diseño del código y el tb se establecieron las constraints o salidas a usar en el dispositivo.
 
-![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/16.PNG )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/18.PNG )
 
 
 ### 4. Makefile
@@ -236,9 +236,10 @@ Una vez creado el Diseño del código y el tb se establecieron las constraints o
 Finalmente se modificó el makefile para poder ejecutar el programa y el banco de pruebas , además de definir el archivo para generar la gráfica de las señales.
 
 
-![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/16.PNG )
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/17.PNG )
 
 
 
 ### Mediante este tutorial se comprueba que el funcionamiento tanto de la fpga como de los programas instalados funcionan adecuadamente y se realizó con éxito el primer codigo
+
 
