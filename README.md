@@ -126,7 +126,119 @@ También se validó el comando global:
 
 ![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/16.PNG )
 
+## 3. Codigo
+
+### 1. Design
+
+Para la tercera parte del tutorial se realizo un codigo como primer ejemplo.
+
+```SystemVerilog
+module module_counter #(
+  parameter COUNT = 13500000
+)(
+  input  logic       clk,
+  input  logic       rst,         
+  output logic [5:0] count_o
+);
+
+localparam int WIDTH_COUNT = $clog2(COUNT);
+
+logic [WIDTH_COUNT-1:0] clk_counter = '0;
+logic [5:0]             led_count_r;
+
+  always_ff @(posedge clk) begin
+    
+    if (!rst) begin
+      led_count_r <= '0;
+      clk_counter <= '0;
+    end
+    
+    else if (clk_counter == COUNT) begin
+      clk_counter <= '0;
+      led_count_r <= led_count_r + 1'b1;
+    end
+    
+    else begin
+      clk_counter <= clk_counter + 1'b1;
+      led_count_r <= led_count_r;
+
+    end
+  end
+
+  assign count_o = ~led_count_r;
+
+endmodule
+```
+En este codigo vemos como mediante el uso de los leds de la fgpa se crea un contador
+
+### 2. TB
+
+Después de crear el Modulo Top del diseño , se procedió con la creación de un tb que funcionaria como medio de pruebas para comprobar el funcionamiento del código 
+```SystemVerilog
+`timescale 1ns / 1ps
+
+module module_counter_tb;
+
+logic clk;
+logic rst;
+logic [5 : 0] count_o;
+
+module_counter # (10) COUNTER (
+    .clk ( clk),
+    .rst (rst),
+    .count_o (count_o)
+);
+
+initial begin
+
+    clk = 0;
+    rst = 1;
+
+    #30;
+
+    rst = 0;
+
+    #30;
+
+    rst = 1;
+
+    #30000;
+    $finish;
+end
+
+always begin
+
+    clk = ~clk;
+    #10;
+    
+end
+
+initial begin
+    $dumpfile("modulr_conta_tb.vcd");
+    $dumpvars (0,module_counter_tb);
+end
 
 
-### Mediante esta tutorial se comprueba que el funcionamiento tanto de la fpga como de los programas instalados funcionan adecuadamente.
+
+
+endmodule
+
+```
+### 3. Constr
+
+Una vez creado el Diseño del código y el tb se establecieron las constraints o salidas a usar en el dispositivo.
+
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/16.PNG )
+
+
+### 4. Makefile
+
+Finalmente se modificó el makefile para poder ejecutar el programa y el banco de pruebas , además de definir el archivo para generar la gráfica de las señales.
+
+
+![image Alt]( https://github.com/joan000001/Tutorial-/blob/main/Imagenes/16.PNG )
+
+
+
+### Mediante este tutorial se comprueba que el funcionamiento tanto de la fpga como de los programas instalados funcionan adecuadamente y se realizó con éxito el primer codigo
 
